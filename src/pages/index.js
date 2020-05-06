@@ -1,3 +1,9 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-export default () => <div>Hello Frontend Masters!</div>;
+if (process.env.NODE_ENV !== 'production') {
+  var axe = require('react-axe');
+  axe(React, ReactDOM, 1000);
+}
+
+export default () => <div>Hello Julian!</div>;
