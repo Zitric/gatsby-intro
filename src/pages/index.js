@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 
 import Layout from '../components/layout/layout';
 import usePosts from '../hooks/use-post';
+import PostPreview from '../components/postPreview/post-preview';
 
 // if (process.env.NODE_ENV !== 'production') {
 //   var axe = require('react-axe');
@@ -21,11 +22,7 @@ const Index = () => {
 
       <h2>Read my posts</h2>
       {posts.map(post => (
-        <>
-          <pre>
-            <code>{JSON.stringify(post, null, 2)}</code>
-          </pre>
-        </>
+        <PostPreview key={post.slug} post={post} />
       ))}
     </Layout>
   );
